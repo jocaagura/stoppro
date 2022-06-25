@@ -11,7 +11,9 @@ class SesionBloc extends Bloc {
   SesionBloc(){
     // _myUser = UserModel(email: 'anonimo@anonimo.com.co', password: 'miPasswordSeguro');
   }
-
+  void signin(){
+    _myUser = UserModel(email: 'anonimo@anonimo.com.co', password: 'miPasswordSeguro');
+  }
   bool get isLogged{
     return !(_myUser == null);
   }

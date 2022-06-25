@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:stoppro/blocs/navigation_bloc.dart';
+import 'package:stoppro/blocs/sesion_bloc.dart';
 import 'package:stoppro/blocs/size_bloc.dart';
 import 'package:stoppro/helpers/helpers.dart';
 import 'package:stoppro/ui/widgets/my_input_widget.dart';
 
 import '../widgets/background_widget.dart';
+import '../widgets/my_custom_button_widget.dart';
+import 'landing_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -38,10 +42,14 @@ class LoginPage extends StatelessWidget {
               return msg;
             },
             onEditingValueFunction: (val) {}),
-        MyInputWidget(onEditingValueFunction: (val) {
-          debugPrint(val);
-        }),
         const MyTextLinkButtonWidget(),
+        MyCustomButtonWidget(
+          label: 'Entrar',
+          function: () {
+            sesionBloc.signin();
+            navigationBloc.push(context, 'landing', const LandingPage());
+          },
+        ),
         Container(
           color: Colors.red,
           child: Text(
@@ -49,20 +57,6 @@ class LoginPage extends StatelessWidget {
         ),
       ],
     ));
-  }
-}
-
-class MyCustomButtonWidget extends StatelessWidget {
-  const MyCustomButtonWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SizedBox(
-      width: double.infinity,
-      height: 60.0,
-    );
   }
 }
 
