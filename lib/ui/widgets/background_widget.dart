@@ -12,6 +12,7 @@ class BackgroundWidget extends StatelessWidget {
     final sizeScreen = MediaQuery.of(context).size;
     final width = (sizeScreen.width - 16).clamp(200.0, 460.0);
     sizeBloc.width = width;
+    // final tema = Theme.of(context);
     return Scaffold(
       body: Container(
           alignment: Alignment.center,
