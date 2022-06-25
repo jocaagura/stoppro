@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../blocs/size_bloc.dart';
 
 class MyInputWidget extends StatelessWidget {
   const MyInputWidget({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class MyInputWidget extends StatelessWidget {
   Widget build(BuildContext context) {
    return Container(
       color: Colors.blue,
-      width: double.infinity,
+      width: sizeBloc.width * 0.9,
       height: 80.0,
     );
   }

@@ -11,6 +11,6 @@ class MyImageWidget extends StatelessWidget {
     return SizedBox(
         width: size.width,
         height: size.height,
-        child: Image.asset('assets/icon.png'));
+        child: Image.asset('assets/icon.png', fit: BoxFit.contain,),);
   }
 }
