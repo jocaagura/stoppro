@@ -21,12 +21,14 @@ class SizeBloc extends Bloc {
     _width = value;
   }
 
-
-  double getWidthByPercent([double value = 1.0]){
-    if(value > 1.0) value = 1.0;
-    if(value < 0.0) value = 0.01;
-    return _width * value;
+  double getWidthByPercent([double value = 1.0, double maxValue = 0]) {
+    if (value > 1.0) value = 1.0;
+    if (value < 0.0) value = 0.01;
+    double tmp = _width * value;
+    if (maxValue > 0 && tmp > maxValue) tmp = maxValue;
+    return tmp;
   }
+
   @override
   void dispose() {
     _widthController.close();

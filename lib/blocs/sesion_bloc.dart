@@ -9,7 +9,7 @@ class SesionBloc extends Bloc {
       StreamController<UserModel?>.broadcast();
 
   SesionBloc(){
-    _myUser = UserModel(email: 'anonimo@anonimo.com.co', password: 'miPasswordSeguro');
+    // _myUser = UserModel(email: 'anonimo@anonimo.com.co', password: 'miPasswordSeguro');
   }
 
   bool get isLogged{
