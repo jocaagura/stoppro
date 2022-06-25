@@ -9,7 +9,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const BackgroundWidget(
         child: Center(
-          child: Text('Loading page'),
+          child: Text('Landing page'),
         ));
   }
 }
